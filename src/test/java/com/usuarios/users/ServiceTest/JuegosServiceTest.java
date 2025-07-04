@@ -4,7 +4,7 @@ import com.usuarios.users.Repository.JuegoRepository;
 import com.usuarios.users.Service.JuegosService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,8 +12,8 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-
-class JuegoServiceTest {
+@ActiveProfiles("test")
+class JuegosServiceTest {
 
     private JuegoRepository juegoRepository;
     private JuegosService juegoService;

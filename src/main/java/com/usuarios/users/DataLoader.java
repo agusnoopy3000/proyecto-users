@@ -35,17 +35,19 @@ public class DataLoader implements CommandLineRunner {
         }
 
         List<Juegos> juegos = juegoRepository.findAll();
+        if (juegos.isEmpty()) return;
 
         // Crear Infraestructura
         for (int i = 0; i < 3; i++) {
             Infraestructura infra = new Infraestructura();
-            infra.setNombre("Maquina " + (i + 1));
+            infra.setNombre("Máquina " + (i + 1));
             infra.setDetalle(faker.lorem().sentence());
             infra.setJueguito(juegos.get(random.nextInt(juegos.size())));
             infraestructuraRepository.save(infra);
         }
 
         List<Infraestructura> infraestructuras = infraestructuraRepository.findAll();
+        if (infraestructuras.isEmpty()) return;
 
         // Crear Suscripciones
         for (int i = 0; i < 3; i++) {
@@ -57,6 +59,7 @@ public class DataLoader implements CommandLineRunner {
         }
 
         List<Suscripcion> suscripciones = suscripcionRepository.findAll();
+        if (suscripciones.isEmpty()) return;
 
         // Crear Usuarios
         for (int i = 0; i < 20; i++) {

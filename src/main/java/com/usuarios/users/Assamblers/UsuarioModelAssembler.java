@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UsuarioModelAssembler implements RepresentationModelAssembler<Usuarios, EntityModel<Usuarios>> {
-
     @Override
     public EntityModel<Usuarios> toModel(Usuarios usuario) {
         return EntityModel.of(usuario,
